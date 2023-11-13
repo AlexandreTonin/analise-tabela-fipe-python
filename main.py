@@ -1,8 +1,9 @@
-import pandas as pd
-import matplotlib.pyplot as plt
 from tkinter import Tk, Button
-import producao as prod
-import covid as covid
+import automaticoxmanual as automaticoxmanual
+import carromaiscaroxmarca as carromaiscaroxmarca
+import precoxano as precoxano
+import precoxtamanhomotor as precoxtamanhomotor
+import quantidadexmarca as quantidadexmarca
 
 # Criar a janela principal
 janela = Tk()
@@ -14,10 +15,19 @@ altura_janela = 600
 janela.geometry(f"{largura_janela}x{altura_janela}")
 
 # Botão para gerar o plot
-botao_gerar_plot = Button(janela, text="Produção de veículos ao longo do tempo", command=prod.gerar_plott, bg="#659bb8", fg="#fff")
+botao_gerar_plot = Button(janela, text="Carro mais caro de cada marca", command=carromaiscaroxmarca.gerar_plot, bg="#659bb8", fg="#fff")
 botao_gerar_plot.pack(pady=5, fill="x")
 
-botao_gerar_plot = Button(janela, text="Produção de veículos durante o período de pandemia (COVID-19)", command=covid.gerar_plot, bg="#659bb8", fg="#fff")
+botao_gerar_plot = Button(janela, text="Preço entre carros automáticos e manuais", command=automaticoxmanual.gerar_plot, bg="#659bb8", fg="#fff")
+botao_gerar_plot.pack(pady=5, fill="x")
+
+botao_gerar_plot = Button(janela, text="Quantidade de carro que cada marca possui", command=quantidadexmarca.gerar_plot, bg="#659bb8", fg="#fff")
+botao_gerar_plot.pack(pady=5, fill="x")
+
+botao_gerar_plot = Button(janela, text="Preço por ano do modelo dos veículos", command=precoxano.gerar_plot, bg="#659bb8", fg="#fff")
+botao_gerar_plot.pack(pady=5, fill="x")
+
+botao_gerar_plot = Button(janela, text="Preço comparado ao tamanho de motores", command=precoxtamanhomotor.gerar_plot, bg="#659bb8", fg="#fff")
 botao_gerar_plot.pack(pady=5, fill="x")
 
 # Iniciar o loop principal da interface gráfica
